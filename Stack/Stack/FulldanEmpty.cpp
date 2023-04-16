@@ -76,6 +76,40 @@ public:
 		top = -1;
 		cout << "Stack telah dikosongkan" << endl;
 	}
+
+	void push(int value)
+	{
+		if (isFull())
+		{
+			cout << "Stack sudah penuh!!!" << endl;
+			return;
+		}
+		else if (top == MAX_SIZE - 1)
+		{
+			cout << "Stack sudah mencapai batas maksimum!!!" << endl;
+			return;
+		}
+		top++;
+		arr[top] = value;
+	}
+
+	void display()
+	{
+		if (isEmpty())
+		{
+			cout << "Stack masih kosong!!!" << endl;
+			return;
+		}
+		else
+		{
+			cout << "Isi stack: ";
+			for (int i = top; i >= 0; i--)
+			{
+				cout << arr[i] << " ";
+			}
+			cout << endl;
+		}
+	}
 };
 
 int main()
